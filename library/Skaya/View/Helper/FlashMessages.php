@@ -75,7 +75,7 @@ class Skaya_View_Helper_FlashMessages
 			// the example in the class comments).
 			foreach ($statMessages as $status => $messages)
 			{
-				$output .= '<div class="message-wrapper '.$status.'"  ><div id="message">';
+				$output .= '<div id="message" class="'.$status.'"  ><p>';
 				
 				// If there is only one message to look at, we don't need to deal with
 				// ul or li - just output the message into the div.
@@ -92,14 +92,14 @@ class Skaya_View_Helper_FlashMessages
 					$output .= '</ul>';
 				}
 				
-				$output .= '</div></div>';
+				$output .= '</p></div>';
 			}
 			
 			// Return the final HTML string to use.
 			return $output;
 		}
 		else {
-			$output .= '<div class="message-wrapper ui-helper-hidden"><div id="message">&nbsp;</div></div>';
+			$output .= '<div id="message" class="hidden"><p>&nbsp;</p></div>';
 			return $output;
 		}
 	}

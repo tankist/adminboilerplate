@@ -90,6 +90,10 @@ input {
 	width: 33%;
 }
 
+.hidden {
+	display: none;
+}
+
 span.disabled {
     .borderRadius(4px);
 	border: 1px solid red;
@@ -179,6 +183,25 @@ ul.navigation {
 
 .submenu-right {
 	.oh;
+}
+
+#message {
+    border-top: 1px solid #e7e7e7;
+	font-weight: bold;
+	line-height: 23px;
+	background-color: #fff5cf;
+	text-align: center;
+	color: #505050;
+	&.fail {
+		color: red;
+	}
+	p {
+		text-align: center;
+	}
+}
+
+#body {
+    margin: 10px auto;
 }
 
 #footer {
