@@ -102,23 +102,27 @@ String.prototype.wikify = function() {
 	};
 
 	$.fn.skayaMessage = function(action) {
-		var args = Array.prototype.slice.call(this, arguments);
+		var args = Array.prototype.slice.call(arguments);
 		return this.each(function() {
 			var $messageContainer = $(this),
 				actions = {
 					show : function (msg, cls) {
-						$messageContainer.find('#message').html(msg).end().show().addClass(cls);
+						$messageContainer.find('p').html(msg || '').end().show().addClass(cls);
 						$(document.body).one('click', function() {
 							actions.hide.defer(5000);
 						});
 					},
 					hide : function() {
-						$messageContainer.fadeOut('slow');
+						$messageContainer.fadeOut('slow', function() {
+							$messageContainer.find('p').empty().end();
+						});
 					}
 				};
 			if (typeof actions[action] != 'function') {
-				args.shift();
 				action = 'show';
+			}
+			else {
+				args.shift();
 			}
 			actions[action].apply(this, args);
 		});
@@ -130,7 +134,7 @@ String.prototype.wikify = function() {
 		$.ajaxSetup({
 			success : function(data) {
 				if (data.error) {
-					showMessage(data.error, 'error');
+					$('#message').skayaMessage(data.error, 'error');
 					return;
 				}
 				if (typeof this.onSuccess == 'function') {
@@ -138,7 +142,7 @@ String.prototype.wikify = function() {
 				}
 			},
 			error : function(xhr, status, e) {
-				showMessage('Error during request. Please refresh page and try again.', 'error');
+				$('#message').skayaMessage('Error during request. Please refresh page and try again.', 'error');
 				console.error(e.message);
 				if (typeof this.onError == 'function') {
 					this.onError.call(this, data);

@@ -37,6 +37,9 @@
 <div id="footer" class="outer">
 	<p class="inner">&copy; Your Copyright <?=date('Y')?> | Website Design & Hosting by <a href="http://www.yobasoft.org.ua/">Yobasoft</a></p>
 </div>
-<?php echo $this->headScript(); ?>
+<?php echo $this->headScript()
+				->prependFile('/js/admin/common.js')
+				->prependFile('http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')
+				->appendFile('/js/listchecks.js'); ?>
 </body>
 </html>
