@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'CabinMedium';
+  src: url('/css/font/Cabin-Medium-webfont.eot');
+  src: url('/css/font/Cabin-Medium-webfont.eot?#iefix') format('embedded-opentype'), url('/css/font/Cabin-Medium-webfont.woff') format('woff'), url('/css/font/Cabin-Medium-webfont.ttf') format('truetype'), url('/css/font/Cabin-Medium-webfont.svg#CabinMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+html, body {
+  height: 100%;
+  font: 11px Verdana,Tahoma;
+}
+a {
+  text-decoration: none;
+  color: #3d9abb;
+}
+dt {
+  width: 123px;
+  padding-top: 10px;
+}
+dd {
+  overflow: hidden;
+}
+dd input {
+  border: 1px solid #ccc;
+  height: 17px;
+  width: 146px;
+  color: #96999c;
+  margin: 2px 0 0;
+}
+h1 {
+  font-family: 'CabinMedium', Helvetica, Verdana, Arian, sans-serif;
+  color: #6bbad6;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.remember {
+  line-height: 28px;
+}
+.remember input {
+  width: auto;
+  vertical-align: text-top;
+}
+#body {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+}
+#container {
+  left: 50%;
+  top: 50%;
+  margin-top: -128px;
+  position: relative;
+  width: 200px;
+  margin-left: -100px;
+}
+input#login, input#forgot {
+  clear: both;
+  display: block;
+  border: medium none;
+  height: 23px;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 14px;
+  background-color: #6bbad6;
+  padding: 0 15px;
+}
+input#forgot {
+  margin-bottom: 25px;
+}
+.messages .try, .messages.error .back {
+  display: none;
+}
+.messages .back, .messages.error .try {
+  display: inherit;
+}
+.form_container {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  height: 256px;
+  width: 204px;
+}
+.items {
+  position: absolute;
+  width: 100em;
+}
+.items .item {
+  float: left;
+  padding-top: 37px;
+  height: 219px;
+  margin: 0 4px;
+  color: #7d7d7d;
+  width: 196px;
+}
+.messages p.error {
+  margin-top: 20px;
+  height: 40px;
+}
+#footer {
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+}
+#footer p {
+  padding: 10px 0;
+  position: relative;
+  left: -50%;
+}

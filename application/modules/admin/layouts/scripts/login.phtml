@@ -6,14 +6,16 @@ $this->headMeta()->appendHttpEquiv('Content-Type','text/html; charset=UTF-8')
 <html>
 <head>
 	<?=$this->headMeta()?>
-	<?=$this->headLink()->setStylesheet('/css/admin/login.css')?>
+	<?=$this->headLink()
+			->prependStylesheet('/css/reset.min.css')
+			->appendStylesheet('/css/admin/login.css');?>
 	<?=$this->headStyle()?>
 	<?=$this->headTitle()?>
 </head>
 <body>
 	<?=$this->layout()->content?>
-	<div id="footer-container">
-		<div id="footer">&copy; Your Copyright <?=date('Y')?> | Website Design & Hosting by <a href="http://www.yobasoft.org.ua/">Yobasoft</a></div>
+	<div id="footer">
+		<p>&copy; Your Copyright <?=date('Y')?> | Website Design & Hosting by <a href="http://www.yobasoft.org.ua/">Yobasoft</a></p>
 	</div>
 	<?=$this->headScript()
 			->setFile('http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js')

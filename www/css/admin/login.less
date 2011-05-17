@@ -1,0 +1,130 @@
+@import '../font';
+
+@color : #3d9abb;
+@backgroundColor : #6bbad6;
+
+@visibleWidth : 200px;
+@visibleHeight : 256px;
+
+@verticalSpace : 37px;
+@horizontalSpace : 4px;
+
+html,body {
+	height: 100%;
+	font: 11px Verdana,Tahoma;
+}
+
+a {
+	text-decoration: none;
+	color: @color;
+}
+
+dt {
+	width: 123px;
+	padding-top: 10px;
+}
+
+dd {
+	overflow: hidden;
+	input {
+		border: 1px solid #ccc;
+		height: 17px;
+		width: 146px;
+		color: #96999c;
+		margin: 2px 0 0;
+	}
+}
+
+h1 {
+	font-family: @glyphFont, Helvetica, Verdana, Arian, sans-serif;
+	color : @backgroundColor;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.remember {
+	line-height: 28px;
+	input {
+		width: auto;
+		vertical-align: text-top;
+	}
+}
+
+#body {
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+#container {
+	left: 50%;
+	top: 50%;
+	margin-top: -1 * @visibleHeight / 2;
+	position: relative;
+	width: @visibleWidth;
+	margin-left: -1 * @visibleWidth / 2;
+}
+
+input#login,input#forgot {
+	clear: both;
+	display: block;
+	border: medium none;
+	height: 23px;
+	cursor: pointer;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-top: 14px;
+	background-color: @backgroundColor;
+	padding: 0 15px;
+}
+
+input#forgot {
+	margin-bottom: 25px;
+}
+
+.messages .try,.messages.error .back {
+	display: none;
+}
+
+.messages .back,.messages.error .try {
+	display: inherit;
+}
+
+.form_container {
+	position: relative;
+	overflow: hidden;
+	float: left;
+	height: @visibleHeight;
+	width: @visibleWidth + 4px;
+}
+
+.items {
+	position: absolute;
+	width: 100em;
+	.item {
+		float: left;
+		padding-top: @verticalSpace;
+		height: @visibleHeight - @verticalSpace;
+		margin:0 @horizontalSpace;
+		color: #7d7d7d;
+		width: @visibleWidth - @horizontalSpace;
+	}
+}
+
+.messages p.error {
+	margin-top: 20px;
+	height: 40px;
+}
+
+#footer {
+	bottom: 0;
+    left: 50%;
+    position: absolute;
+    p {
+        padding:10px 0;
+		position: relative;
+		left: -50%;
+    }
+}

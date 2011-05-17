@@ -2,16 +2,16 @@
 	<div id="container">
 		<div class="form_container">
 			<div class="items">
-				<div id="login_error" class="messages">
-					<h1 class="login">Login</h1>
+				<div id="login_error" class="item messages">
+					<h1 class="login">Login Error</h1>
 					<p class="error"></p>
 					<a class="back_to_login back" href="#back">Go Back &gt;</a>
 					<a class="back_to_login try" href="#try">Try Again &gt;</a>
 				</div>
-				<div id="login_form"><?=$this->loginForm?></div>
-				<div id="forgot_form"><?=$this->forgotForm?></div>
-				<div id="forgot_error" class="messages">
-					<h1 class="forgot">Login</h1>
+				<div id="login_form" class="item"><?=$this->loginForm?></div>
+				<div id="forgot_form" class="item"><?=$this->forgotForm?></div>
+				<div id="forgot_error" class="item messages">
+					<h1 class="forgot">Password Recovery Error</h1>
 					<p class="error"></p>
 					<a class="forgot_password back" href="#back">&lt; Go Back</a>
 					<a class="forgot_password try" href="#try">&lt; Try Again</a>
