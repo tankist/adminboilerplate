@@ -2,12 +2,41 @@
 <html>
 <head>
 	<?php echo $this->headMeta(); ?>
-	<?php echo $this->headLink()->prependStylesheet('/css/reset.min.css'); ?>
+	<?php echo $this->headLink()
+					->prependStylesheet('/css/admin/style.min.css')
+					->prependStylesheet('/css/reset.min.css'); ?>
 	<?php echo $this->headStyle(); ?>
 	<?php echo $this->headTitle(); ?>
 </head>
 <body>
-<?php echo $this->layout()->content; ?>
-	<?php echo $this->headScript(); ?>
+<?php
+	$navigationMenuHelper = $this->getHelper('Navigation_Menu');
+?>
+<div class="body-wrapper wrapOut">
+	<div class="header-wrapper">
+		<div class="header-menu-wrapper">
+			<div id="header-menu" class="wrapIn">
+				<?=$navigationMenuHelper->renderMenu();?>
+			</div>
+		</div>
+		<div class="header-submenu-wrapper">
+			<div id="header-submenu" class="wrapIn">
+				<div class="fl"><?=$this->submenu?></div>
+				<div class="submenu-right">
+					<div class="fr second-button-link"><a
+						href="<?=$this->url(array('controller' => 'users', 'action' => 'logout'))?>">Logout</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?=$this->flashMessages()?>
+	<div id="body" class="wrapIn">
+		<?=$this->layout()->content?>
+	</div>
+</div>
+<div id="footer" class="outer">
+	<p class="inner">&copy; Your Copyright <?=date('Y')?> | Website Design & Hosting by <a href="http://www.yobasoft.org.ua/">Yobasoft</a></p>
+</div>
+<?php echo $this->headScript(); ?>
 </body>
 </html>
