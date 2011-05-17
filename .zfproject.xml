@@ -30,7 +30,10 @@
               <actionMethod actionName="logout"/>
             </controllerFile>
           </controllersDirectory>
-          <formsDirectory enabled="false"/>
+          <formsDirectory enabled="false">
+            <formFile formName="Login"/>
+            <formFile formName="ForgotPassword"/>
+          </formsDirectory>
           <layoutsDirectory enabled="false"/>
           <modelsDirectory/>
           <viewsDirectory>
