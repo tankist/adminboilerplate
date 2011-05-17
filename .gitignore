@@ -1,0 +1,6 @@
+cache/
+tests/report/
+*.log
+*.bak
+.idea/
+.htaccess
